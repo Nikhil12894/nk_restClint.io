@@ -1,0 +1,39 @@
+<div class="container">
+    <table class="table table-borderless table-hover table-dark table-sm" style="width: 50%;">
+        <thead >
+          <th scope="col">#</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Operation</th>
+        </thead>
+        <tbody style="background-color: rgba(189, 212, 209, 0.404);">
+          <tr *ngFor="let user of users">
+            <td>{{user.id}}</td>
+            <td>{{user.fname}}</td>
+            <td>{{user.lname}}</td>
+            <td><div class="btn btn-danger btn-sm" (click)="deleteUser(user)">Delete</div>
+            <div class="btn btn-primary btn-sm" (click)="updateUser(user)">Edit</div></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="btn btn-primary btn-sm" (click)="newUser()">
+        Add User
+      </div>
+</div>
+
+<div class="container">
+  <form>
+  <div class="form group">
+    <input type="text" name="id" class="form-control" >
+  </div>
+  <div class="form group">
+    <label for="fname">First Name</label>
+    <input type="text" name="fname" class="form-control" >
+  </div>
+  <div class="form group">
+    <label for="lname">Last name</label>
+    <input type="text" name="lname" class="form-control">
+  </div>
+  <input type="submit" value="save" class="btn btn-success">
+  </form>
+  </div>
